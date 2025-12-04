@@ -17,7 +17,7 @@ public class ObjectManager : MonoBehaviour
 
     [SerializeField] Timer meuTimer; //copia do Timer que eu fiz
 
-    
+
     // Método para clique no objeto principal
     void OnMouseDown()
     {
@@ -32,7 +32,8 @@ public class ObjectManager : MonoBehaviour
             clickerCountText.text = clickCount.ToString();
 
             // Cria objetos (instâncias) ao clicar no objeto principal
-            Instantiate(spawnObject, spawnPoint.position, spawnPoint.rotation)
+            Instantiate(objetoGerado, spawnPoint.position, spawnPoint.rotation);
         }
+    }
 
 }
