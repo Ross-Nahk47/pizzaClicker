@@ -13,21 +13,26 @@ public class ObjectManager : MonoBehaviour
     public Transform spawnPoint;
 
     // Declara variável de referência para o objeto (spawnpoint) 
-    public GameObject spawnObject;
+    public GameObject objetoGerado;
 
+    [SerializeField] Timer meuTimer; //copia do Timer que eu fiz
+
+    
     // Método para clique no objeto principal
     void OnMouseDown()
     {
+        if (meuTimer.acabou == false)
+        {
 
-        // Aumenta o valor da variável de contagem
-        clickCount++;
 
-        // Seta o valor atualizado da variável no texto da UI
-        clickerCountText.text = clickCount.ToString();
+            // Aumenta o valor da variável de contagem
+            clickCount++;
 
-        // Cria objetos (instâncias) ao clicar no objeto principal
-        Instantiate(spawnObject, spawnPoint.position, spawnPoint.rotation);
-              
-    }
+            // Seta o valor atualizado da variável no texto da UI
+            clickerCountText.text = clickCount.ToString();
+
+            // Cria objetos (instâncias) ao clicar no objeto principal
+            Instantiate(spawnObject, spawnPoint.position, spawnPoint.rotation)
+        }
 
 }

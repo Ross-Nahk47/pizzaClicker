@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
     
      [SerializeField] TextMeshProUGUI textoTimer;
      [SerializeField] float tempoRestante;
-
+    public bool acabou = false;
     // Update is called once per frame
     void Start() 
     {
@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     
     void Update()
     {
-        if(tempoRestante > 0)
+        if (tempoRestante > 0)
         {
             tempoRestante -= Time.deltaTime;
         }
@@ -27,8 +27,9 @@ public class Timer : MonoBehaviour
         {
             tempoRestante = 0;
             //GameOver();
-            Time.timeScale = 0;
             textoTimer.color = Color.red;
+            acabou = true;
+            Time.timeScale = 0;
         }
 
 
